@@ -6,6 +6,31 @@
 
 require('./bootstrap');
 
+
+
+
+import Vue from 'vue';
+/*import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faCoffee)*/
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faJs, faVuejs } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+
+
+
+library.add(faCoffee, faJs, faVuejs);
+
+
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+Vue.config.productionTip = false
 /**
  * Next, we will create a fresh React component instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -13,3 +38,16 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+
+new Vue({
+    el: '#app',
+    data:{
+
+    },
+    methods: {
+      do_something:function(id){
+        alert(id);
+      }
+    },
+    // render: h => h(App)
+  })
